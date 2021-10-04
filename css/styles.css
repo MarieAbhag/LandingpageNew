@@ -1,0 +1,654 @@
+/*===== some variable for later using =====*/
+:root{
+  /*===== Colors =====*/
+  --first-color: #a6b1de;
+  --second-color: #cfdce5;
+  --first-color-dark: #6459d4;
+  --first-color-darken: #463ba1;
+  --hover-color: #dbd4b5;
+  --white-color: #FCF8F8;
+  
+  --start-color:#3a2f7a;
+  --end-color:#0f2637;
+  --helper-color:#f5ab2d;
+
+  --body-background:hsl(0, 40%, 98%);
+  --font-color-main:black;
+  --font-color-secondary:white;
+
+
+  /*===== Font and typography =====*/
+  --body-font: 'Poppins', sans-serif;
+  --big-font-size: 2.5rem;
+  --normal-font-size: .938rem;
+}
+
+@media screen and (min-width: 768px){
+  :root{
+    --big-font-size: 5rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+
+/*=====================================*/
+/*===== Classes for tags (global) =====*/
+/*=====================================*/
+
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+html{
+  background-image: linear-gradient(to left,var(--first-color) , var(--second-color));
+}
+
+
+body{
+  margin: auto;
+  max-width: 1500px;
+  padding: 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: 500;
+
+}
+
+button{
+  background-color: var(--helper-color);
+  font-size:large;
+  border-radius: 10px;
+  min-width: 100px;
+  padding: 3px;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: var(--hover-color);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color:  var(--font-color-main);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor:pointer;
+  /* float: left; */
+}
+
+li a:hover:not(.active) {
+  background-color: var(--hover-color);
+}
+
+li a:active {
+  background-color: var(--hover-color);
+}
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+select:hover{
+  background-color: var(--hover-color);
+}
+
+/*=====================================*/
+/*=== Classes for special components ==*/
+/*=====================================*/
+
+.landingSection{
+  display: none;
+  padding: 100px;
+  margin-top: 200px;
+}
+
+.landingSectionActive{
+  background-color: #a6b1de;
+  padding: 100px;
+  margin-top: 200px;
+}
+
+
+.landingSectionUserDefined
+{
+  padding: 100px;
+  margin-top: 200px;
+}
+
+.checkBoxClass{
+  border-radius: 1px;
+}
+
+#sectionsDetails{
+  display: none;
+}
+
+.secDetail{
+  border-radius: 1px;
+}
+
+.secTitle{
+  border-radius: 1px;
+}
+
+.secText{
+  border-radius: 1px;
+}
+
+#mainDiv{
+  height: 100%;
+  width: 100%;
+  box-shadow: 2px 2px 3px #999;
+  background-color: var(--body-background) ;
+}
+
+.bodyStyle{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+
+/* ==== Header section classes (nav-menu) ====*/
+.headerStyle{
+  padding: 2px;
+  position: sticky;
+  top: 0;
+  margin: auto;
+  z-index: 100;
+  background-color: var(--body-background) ;
+}
+
+.active {
+  background-color: var(--helper-color);
+  color: var(--font-color-main);
+}
+
+
+/* ==== Home section classes (slider) ====*/
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+  height: 500px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  height: 500px;
+  color: var(--font-color-secondary);
+  background-image: linear-gradient(to left,var(--start-color) , var(--end-color));
+}
+
+.SliderImg{
+  max-height: 500px;
+  width: 100%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  background-color:var(--helper-color);
+  color: var(--white-color) ;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: var(--hover-color);
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.floatingAddItemMenu{
+
+  bottom:105px;
+	right:105px;
+
+}
+
+.floatingButton{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:var(--helper-color);
+	color:var(--white-color);
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+  cursor: pointer;
+  display: none;
+}
+
+.floatingButton:hover{
+  background-color: var(--hover-color);
+}
+
+.floatingButtonIcon{
+	margin-top:22px;
+}
+
+.addItemPopUpStyle {
+  display: none; /* Hidden by default */
+  position:fixed;
+  bottom:105px;
+	right:105px;
+  width: 400px;
+  height: 400px;
+  padding: 10px;
+  background-color: var(--first-color-darken);
+  color:var(--white-color);
+}
+
+#ItemsComboBox{
+  width: 90%;
+  font-size: large;
+}
+
+
+
+* {box-sizing:border-box}
+
+
+/* ==== About us section classes ====*/
+.aboutUsContainer{
+  width: 100%;
+  margin-top: 80px;
+  padding: 10px;
+  height: 300px;
+}
+
+.leftTopPart{
+  width: 50%;
+  text-align: center;
+  float: left;
+}
+
+.rightTopPart{
+  width: 50%;
+  float: right;
+  text-align: center;
+
+}
+
+.aboutUsImg{
+  max-height: 300px;
+}
+
+/*================================ */
+
+/* ==== Comments section classes ====*/
+
+#commentsSection{
+  width: 100%;
+  padding: 80px;
+  text-align: center;
+}
+/*================================ */
+
+/* ==== Contact us section classes ====*/
+.contactUscontainer{
+  width: 100%;
+  margin-top: 80px;
+  padding: 100px;
+  height: auto;
+}
+
+
+/*================================ */
+
+
+/* ==== rating system section classes ====*/
+#ratingSystemSection{
+  width: 100%;
+  padding: 80px 80px 0 80px;
+}
+
+.ratingStar{
+  cursor: pointer;
+}
+.ratingStarChecked{
+  cursor: pointer;
+  color: var(--helper-color);
+}
+
+.averageRatingDiv{
+	width:200px;
+	height:200px;
+  margin-left: 40%;
+	background-color:var(--helper-color);
+	color:var(--white-color);
+	border-radius:150px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+/* Three column layout */
+.side {
+  float: left;
+  width: 15%;
+  margin-top: 10px;
+}
+
+.middle {
+  float: left;
+  width: 70%;
+  margin-top: 10px;
+}
+
+/* Place text to the right */
+.right {
+  text-align: right;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The bar container */
+.bar-container {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+}
+
+/* Individual bars */
+.bar-value {height: 18px; background-color:var(--helper-color);}
+
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 400px) {
+  .side, .middle {
+    width: 100%;
+  }
+  /* Hide the right column on small screens */
+  .right {
+    display: none;
+  }
+}
+
+/*================================ */
+
+/* ==== user-added sections classes ====*/
+#userAddedSections{
+  width: 100%;
+  padding: 100px;
+}
+
+
+/*================================ */
+
+footer{
+  background-image: linear-gradient(to left,var(--start-color) , var(--end-color));
+  width: 100%;
+  padding: 2px;
+  color: var(--font-color-secondary);
+  text-align: center;
+  margin-top: 70px;
+}
+
+
+/* ==== Fading animation classes ====*/
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+
+
+/* ---- Base Rules ---- */
+body {
+  background: rgb(136,203,171);
+  background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+  margin: 0;
+  font-family: 'Merriweather', serif;
+  color: rgb(2, 1, 1);
+}
+
+
+/* Typeography General*/
+h1 {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 3em;
+  margin: 2em 1rem;
+}
+
+@media only screen and (min-width: 35em){
+  h1 {
+      font-size: 7em;
+      margin: 2em 4rem 1em;
+  }
+}
+
+h2 {
+  border-bottom: 1px solid rgb(12, 12, 9);
+  font-family: 'Oxygen', Sans-Serif;
+  margin: 10px;
+  font-size: 3em;
+  color: rgb(2, 1, 1);
+}
+
+p {
+  line-height: 1.6em;
+  color: rgb(2, 1, 1);
+}
+
+/* ---- Layout Rules ---- */
+main {
+  margin: 10vh 1em 10vh;
+}
+
+.main-hero {
+  min-height: 40vh;
+  padding-top: 3em;
+}
+
+section {
+  position: relative;
+  min-height: 700px;
+}
+
+
+/* ---- Module Rules ---- */
+
+/* Navigation Styles*/
+.navbar__menu ul {
+  padding-left: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.navbar__menu li {
+  display: inline-block;
+}
+
+.navbar__menu .menu__link {
+  display: block;
+  padding: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar__menu .menu__link:hover {
+  background: #333;
+  color: #fff;
+  transition: ease 0.3s all;
+}
+
+/* Header Styles */
+.page__header {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+
+
+/* ---- Theme Rules ---- */
+/* Landing Container Styles */
+.landing__container {
+  padding: 1em;
+  text-align: left;
+}
+
+@media only screen and (min-width: 35em){
+  .landing__container {
+      max-width: 50em;
+      padding: 4em;
+  }
+}
+
+section:nth-of-type(even) .landing__container {
+  margin-right: 0;
+  margin-left: auto;
+  text-align: right; 
+}
+
+.activeLanding{
+  background-color: var(--helper-color);
+}
+
+/* Background Circles */
+/* Note that background circles are created with psuedo elements before and after */
+/* Circles appear to be random do to use of :nth-of-type psuedo class */
+section:nth-of-type(odd) .landing__container::before {
+  content: '';
+  background: rgba(255, 255, 255, 0.187);
+  position: absolute;
+  z-index: -5;
+  width: 20vh;
+  height: 20vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(even) .landing__container::before {
+  content: '';
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+  position: absolute;
+  top: 3em;
+  right: 3em;
+  z-index: -5;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n) .landing__container::after {
+  content: '';
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -5;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n + 1) .landing__container::after {
+  content: '';
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+  position: absolute;
+  right: 20vw;
+  bottom: -5em;
+  z-index: -5;
+  width: 15vh;
+  height: 15vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+
+
+/* Section Active Styles Keyframe Animations */
+@keyframes rotate {
+from {
+  transform: rotate(0deg)
+             translate(-1em)
+             rotate(0deg);
+}
+to {
+  transform: rotate(360deg)
+             translate(-1em) 
+             rotate(-360deg);
+}
+}
