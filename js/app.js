@@ -33,6 +33,8 @@ let numOfLandingSections = 0;
 // array of html components contains the titles-input of the user-defined sections
 let titels = ["Section1","Section2","Section3","Section4","Section5"];
 
+document.getElementById("headerItems").addEventListener("click", ChangeActiveState);
+
 ShowMainPageWithUserSetup();
 // ============================================================================
 
@@ -63,6 +65,7 @@ function ShowMainPageWithUserSetup()
 // function to change active class for nav item and section
 function ChangeActiveState(e) 
 {
+    e.preventDefault()
     RemoveActiveState("activeLanding");
     RemoveActiveState("active");
     var elmnt = document.getElementById(e.target.id +"usr");
